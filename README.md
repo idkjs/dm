@@ -1,6 +1,6 @@
 
 
-# dotfiles.fish
+# dm
 
 > 100% pure-<a href="https://fishshell.com" title="Portable Minimal Dotfiles ">fish</a> portable minimal dotfiles manager.
 
@@ -8,19 +8,19 @@
 ## Usage
 
 ```bash
-dotfiles status
-dotfiles add .vimrc
-dotfiles commit -m "Add vimrc"
-dotfiles add .bashrc
-dotfiles commit -m "Add bashrc"
-dotfiles push
+dm status
+dm add .vimrc
+dm commit -m "Add vimrc"
+dm add .bashrc
+dm commit -m "Add bashrc"
+dm push
 ```
 ## Installation
 
 [fisherman](https://github.com/jorgebucaran/fisher)(recommended)
 
 ```bash
-fisher install idkjs/dotfiles.fish
+fisher install idkjs/dm
 ```
 
 Run `git init --bare $HOME/.dotfiles`
@@ -33,14 +33,14 @@ dotfiles config --local status.showUntrackedFiles no`
 [automatic installation script](./scripts/dotfiles-install.fish):
 
 ```bash
-curl -fsSL https://dotfiles-fish.idkjs.vercel.app/install | fish
+curl -fsSL https://dm.idkjs.vercel.app/install | fish
 ```
 
 ## Manually
 
 1. Run
 ```bash
-git clone idkjs/dotfiles.fish
+git clone idkjs/dm
 ```
 2. Run
 ```bash
@@ -49,11 +49,11 @@ make
 or
 
 ```
-cp conf.d/dotfiles.fish ~/.config/fish/conf.d/
+cp conf.d/dm.fish ~/.config/fish/conf.d/
 ```
 
 Run `git init --bare $HOME/.dotfiles`
-Open a new terminal and run `dotfiles config --local status.showUntrackedFiles no`
+Open a new terminal and run `dm config --local status.showUntrackedFiles no`
 
 
 ## Portability
@@ -63,17 +63,17 @@ If you need your config on a remote machine, just download your git repository a
 On new machine assuming you already have fish installed:
 
 ```bash
-fisher install idkjs/dotfiles.fish
+fisher install idkjs/dm
 echo ".dotfiles" >> .gitignore
 git clone --bare <git-repo-url> $HOME/.dotfiles
 ```
 
 Checkout the actual content from the bare repository to your $HOME:
 
-### dotfiles status
+### dm status
 ```bash
 
-~/.dotfiles (BARE:main)> dotfiles status
+~/.dotfiles (BARE:main)> dm status
 On branch main
 
 No commits yet
@@ -81,7 +81,7 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ~/.dotfiles (BARE:main)>
 ```
-### dotfiles checkout
+### dm checkout
 ```bash
 
 ~/.dotfiles (BARE:main)> dotfiles status
@@ -98,7 +98,7 @@ nothing to commit (create/copy files and use "git add" to track)
 To uninstall run:
 
 ```bash
-rm -f $HOME/.config/fish/conf.d/dotfiles.fish
+rm -f $HOME/.config/fish/conf.d/dm.fish
 ```
 or
 ```

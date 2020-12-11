@@ -11,12 +11,12 @@ echo ".dotfiles" >> $dotfiles/.gitignore
 # function dotfiles --wraps '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' --description 'alias dotfiles=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 #     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $argv
 # end
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dm='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 echo "Creating .dotfiles-backup"
 
 mkdir -p $dotfiles_backup && \
-    dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
+    dm checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
     xargs -I{} mv {} $dotfiles_backup/{}
 
 echo Created .dotfiles-backup at $dotfiles_backup
@@ -27,13 +27,13 @@ echo Created .dotfiles-backup at $dotfiles_backup
 
 # run our dotfiles alias to configure git to not show untracked files
 
-dotfiles config status.showUntrackedFiles no
+dm config status.showUntrackedFiles no
 
 # add dotfiles function to our conf.d so fish is always aware of it
 
 # manually
 rm $confd
-echo "alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+echo "alias dm='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ">> $confd
 
 # with fisher
