@@ -18,9 +18,6 @@ and echo Added "idkjs/dm to $confd"
 or echo "Could not add dm.fish from github, adding manually"
 echo "alias dm='git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME'" > $confd
 
-# local
-# alias dm='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
 echo "Creating .dotfiles-backup"
 
 mkdir -p $dotfiles_backup && \
@@ -29,16 +26,6 @@ mkdir -p $dotfiles_backup && \
 
 echo Created .dotfiles-backup at $dotfiles_backup
 
-# run our dotfiles alias to configure git to not show untracked files
+# run dm to configure git to not show untracked files
 
 dm config status.showUntrackedFiles no
-
-# add dotfiles function to our conf.d so fish is always aware of it
-
-# manually
-# rm $confd
-# echo "alias dm='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-# ">> $confd
-
-# with fisher
-# fisher install idkjs/dotfiles.fish

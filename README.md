@@ -5,7 +5,7 @@
 > 100% pure-<a href="https://fishshell.com" title="Portable Minimal Dotfiles ">fish</a> portable minimal dotfiles manager.
 
 - fish implementation of [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles) imagined by [StreakyCobra](https://news.ycombinator.com/item?id=11071754).
-- 
+-
 ## Usage
 
 ```bash
@@ -107,6 +107,8 @@ make uninstall
 ```
 
 ## Resources
+[quotes in fish docs](https://fishshell.com/docs/2.4/index.html#quotes)
+
 [echo variable name is `\$HOME`](http://unix.stackexchange.com/questions/129084/ddg#129113)
 
 [string-expansion](https://stackoverflow.com/questions/65132069/how-to-combine-text-with-expanded-variable-into-a-variable-expansion-in-fish)
