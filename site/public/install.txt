@@ -1,5 +1,5 @@
 #!/bin/fish
-set dotfiles $HOME/.dotfiles
+set dotfiles $HOME/.dotfiles.git
 set dotfiles_backup $HOME/.dotfiles-backup
 set confd $HOME/.config/fish/conf.d/dm.fish
 # initialize bare repository
@@ -13,13 +13,10 @@ echo ".dotfiles" >> $dotfiles/.gitignore
 
 # add dm function to our conf.d so fish is aware of it and we can use it below
 
-fisher install idkjs/dm.fish >/dev/null
-and echo Added "idkjs/dm.fish to $confd"
-or echo "Could not add idkjs/dm.fish from github, adding manually"
-echo "alias dm='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" >> $confd
-
-# local
-# alias dm='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+fisher install idkjs/dm >/dev/null
+and echo Added "idkjs/dm to $confd"
+or echo "Could not add dm.fish from github, adding manually"
+echo "alias dm='git --git-dir=\$HOME/.dotfiles.git/ --work-tree=\$HOME'" > $confd
 
 echo "Creating .dotfiles-backup"
 
@@ -29,16 +26,6 @@ mkdir -p $dotfiles_backup && \
 
 echo Created .dotfiles-backup at $dotfiles_backup
 
-# run our dotfiles alias to configure git to not show untracked files
+# run dm to configure git to not show untracked files
 
 dm config status.showUntrackedFiles no
-
-# add dotfiles function to our conf.d so fish is always aware of it
-
-# manually
-# rm $confd
-# echo "alias dm='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-# ">> $confd
-
-# with fisher
-# fisher install idkjs/dotfiles.fish
