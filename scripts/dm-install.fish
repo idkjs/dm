@@ -13,9 +13,9 @@ echo ".dotfiles" >> $dotfiles/.gitignore
 
 # add dm function to our conf.d so fish is aware of it and we can use it below
 
-fisher install idkjs/dm.fish >/dev/null
-and echo Added "idkjs/dm.fish to $confd"
-or echo "Could not add idkjs/dm.fish from github, adding manually"
+fisher install idkjs/dm >/dev/null
+and echo Added "idkjs/dm to $confd"
+or echo "Could not add idkjs/dm from github, adding manually"
 echo "alias dm='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" >> $confd
 
 # local
