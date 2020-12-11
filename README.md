@@ -27,7 +27,7 @@ Run `git init --bare $HOME/.dotfiles`
 Open a new terminal and run:
 
 ```
-dotfiles config --local status.showUntrackedFiles no`
+dm config --local status.showUntrackedFiles no`
 ```
 ## TLDR
 [automatic installation script](./scripts/dotfiles-install.fish):
