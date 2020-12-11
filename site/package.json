@@ -5,7 +5,7 @@
   "author": "Alain Armand",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf public; mkdir public; cp ./scripts/dotfiles-install.fish ./public/install.txt;"
+    "build": "rm -rf public; mkdir public; cp ../scripts/dm-install.fish ./public/install.txt;"
   },
   "devDependencies": {
     "@vercel/node": "1.8.5",

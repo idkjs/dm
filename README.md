@@ -106,6 +106,8 @@ make uninstall
 ```
 
 ## Resources
+[string-expansion](https://stackoverflow.com/questions/65132069/how-to-combine-text-with-expanded-variable-into-a-variable-expansion-in-fish)
+[fish-article](https://mvolkmann.github.io/fish-article/)
 [`wraps` doesnt tak an `=` sign](https://fishshell.com/docs/current/cmds/alias.html?highlight=wraps#example)
 
 [use-exit-status-of-command-in-fish-function](https://dev.to/talha131/use-exit-status-of-command-in-fish-function-2lj1)
