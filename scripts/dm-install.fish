@@ -1,5 +1,5 @@
 #!/bin/fish
-set dotfiles $HOME/.dotfiles
+set dotfiles $HOME/.dotfiles.git
 set dotfiles_backup $HOME/.dotfiles-backup
 set confd $HOME/.config/fish/conf.d/dm.fish
 # initialize bare repository

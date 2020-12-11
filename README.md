@@ -9,13 +9,83 @@
 ## Usage
 
 ```bash
-dm status
-dm add .vimrc
-dm commit -m "Add vimrc"
-dm add .bashrc
-dm commit -m "Add bashrc"
-dm push
+~> dm status
+#  add a global .gitignore file by adding it to your root and then pointing to it in `git config`
+~> echo "node_modules" >> .gitignore
+~> git config --global core.excludesFile "~/.gitignore"
+//  add it to your dotfiles with `dm add .gitignore`
+~> dm add .gitignore
+// commit it with a message
+~> dm commit -m "Add global gitignore"
+// add your fish configuration
+~> dm add .config/fish
+~> dm commit -m "Add fish config"
+// or add your whole .config directory
+~> dm add .config
+~> dm commit -m "Adds .config to dotfiles"
 ```
+```bash
+# use dm status to see where you are
+~> dm status
+
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .config/.DS_Store
+	new file:   .config/configstore/update-notifier-qnm.json
+	new file:   .config/configstore/update-notifier-vercel.json
+	new file:   .config/fish/.DS_Store
+	new file:   .config/fish/completions/fisher.fish
+	new file:   .config/fish/completions/gitio.fish
+	new file:   .config/fish/completions/tabtab.fish
+	new file:   .config/fish/conf.d/dm.fish
+	new file:   .config/fish/fish_plugins
+	new file:   .config/fish/fish_variables
+	new file:   .config/fish/functions/.DS_Store
+	new file:   .config/fish/functions/fisher.fish
+	new file:   .config/fish/functions/gitio.fish
+	new file:   .config/gh/config.yml
+	new file:   .config/gh/hosts.yml
+	new file:   .gitconfig
+	new file:   .gitignore
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .config/.DS_Store
+
+Untracked files not listed (use -u option to show untracked files)
+mandalarian@mandalarian ~> dm rm --cached .config/.DS_Store
+error: the following file has staged content different from both the
+file and the HEAD:
+    .config/.DS_Store
+(use -f to force removal)
+
+
+# looks like I have some unwanted `.DS_Store files
+~> dm rm --cached -f .config/.DS_Store
+rm '.config/.DS_Store'
+~> dm rm --cached -f .config/fish/.DS_Store
+rm '.config/fish/.DS_Store'
+~>
+```
+
+## TLDR
+[automatic installation script](./scripts/dotfiles-install.fish):
+
+```bash
+curl -fsSL https://dm.idkjs.vercel.app/install | fish
+```
+
+## Template/Fork
+
+Click the template button or fork this repo.
+
+Have at it!
+
 ## Installation
 
 [fisherman](https://github.com/jorgebucaran/fisher)(recommended)
@@ -30,13 +100,6 @@ Open a new terminal and run:
 ```
 dm config --local status.showUntrackedFiles no`
 ```
-## TLDR
-[automatic installation script](./scripts/dotfiles-install.fish):
-
-```bash
-curl -fsSL https://dm.idkjs.vercel.app/install | fish
-```
-
 ## Manually
 
 1. Run
@@ -107,6 +170,10 @@ make uninstall
 ```
 
 ## Resources
+
+[git-bare-ssh](https://gist.github.com/joahking/780877)
+[PatrickF1/dotfiles for deployment](https://github.com/PatrickF1/dotfiles)
+
 [quotes in fish docs](https://fishshell.com/docs/2.4/index.html#quotes)
 
 [echo variable name is `\$HOME`](http://unix.stackexchange.com/questions/129084/ddg#129113)
