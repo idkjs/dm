@@ -1,6 +1,6 @@
 {
   "redirects": [
-    { "source": "/", "destination": "https://github.com/idkjs/dotfiles.fish" }
+    { "source": "/", "destination": "https://github.com/idkjs/dm" }
   ],
   "rewrites": [
      { "source": "/install", "destination": "/install.txt" }
