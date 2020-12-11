@@ -16,8 +16,7 @@ echo ".dotfiles" >> $dotfiles/.gitignore
 fisher install idkjs/dm >/dev/null
 and echo Added "idkjs/dm to $confd"
 or echo "Could not add dm.fish from github, adding manually"
-rm $confd
-echo "alias dm='git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME" >> $confd
+echo "alias dm='git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME" > $confd
 
 # local
 # alias dm='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
