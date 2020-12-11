@@ -132,6 +132,7 @@ echo ".dotfiles" >> .gitignore
 git clone --bare <git-repo-url> $HOME/.dotfiles
 ```
 
+
 Checkout the actual content from the bare repository to your $HOME:
 
 ### dm status
