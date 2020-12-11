@@ -3,3 +3,6 @@ all:
 
 uninstall:
 	rm -f ~/.config/fish/conf.d/dm.fish
+
+site:
+	cd site && yarn build && cd ..

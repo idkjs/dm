@@ -189,6 +189,13 @@ make uninstall
 [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
 
 [fish-shell playground](https://rootnroll.com/d/fish-shell/)
+[https://github.com/afq984/dotfiles](https://github.com/afq984/dotfiles)
+[fishshell-gitter](https://gitter.im/fish-shell/fish-shell)
+[Figglewatts/dotfiles](https://github.com/Figglewatts/dotfiles/blob/master/install.fish)
+[skybro/dotfiles](https://github.com/sky-bro/.dotfiles/blob/master/README.md)
+[uses `set -l`/set local within function scope](https://github.com/tsujamin/dotfiles/blob/main/.config/fish/functions/dotfile.fish)
+
+[pre-commit-hook](https://github.com/gazorby/fish-git-check-id/blob/master/functions/gckid.fish)
 
 ## License
 
