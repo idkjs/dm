@@ -1,0 +1,15 @@
+{
+  "name": "dotfiles.fish",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Alain Armand",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf public; mkdir public; cp ./scripts/dotfiles-install.fish ./public/install.txt;"
+  },
+  "devDependencies": {
+    "@vercel/node": "1.8.5",
+    "typescript": "4.1.2",
+    "vercel": "21.0.1"
+  }
+}
